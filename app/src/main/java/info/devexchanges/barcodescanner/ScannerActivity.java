@@ -19,6 +19,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
         super.onCreate(state);
         setContentView(R.layout.activity_scanner);
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.content_frame);
+
         scannerView = new ZXingScannerView(this);
         contentFrame.addView(scannerView);
     }

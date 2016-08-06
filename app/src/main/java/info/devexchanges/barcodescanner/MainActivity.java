@@ -2,17 +2,11 @@ package info.devexchanges.barcodescanner;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.zxing.Result;
-
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +22,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         View btnScan = findViewById(R.id.btn_scan);
         format = (TextView) findViewById(R.id.format);
         content = (TextView) findViewById(R.id.content);
+
+        setSupportActionBar(toolbar);
 
         btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
